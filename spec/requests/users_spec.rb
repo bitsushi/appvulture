@@ -32,6 +32,7 @@ describe "Users" do
       click_button "Signup"
       current_path.should eq(root_path)
       page.should have_content("You have signed up")
+      last_email.to.should include('test@test.com')
     end
 
     it "cannot signup without valid credentials" do
