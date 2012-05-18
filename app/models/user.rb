@@ -27,6 +27,9 @@ class User < ActiveRecord::Base
 
   before_create { generate_token(:auth_token) }
 
+  has_many :lenses, foreign_key: :watcher_id
+  has_many :apps, through: :lenses, foreign_key: :app_id #make into watched_apps
+
   def send_password_reset
     generate_token(:password_reset_token)
     self.password_reset_sent_at = Time.zone.now

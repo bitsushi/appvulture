@@ -1,4 +1,6 @@
 Appvulture::Application.routes.draw do
+  resources :lenses
+
   resources :changes
 
   resources :apps

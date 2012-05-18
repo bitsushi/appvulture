@@ -20,7 +20,7 @@ require 'spec_helper'
 describe User do
   let(:user) { FactoryGirl.create(:user) }
 
-  pending { should have_many(:watched_apps) }
+  it { should have_many(:apps) }
 
   describe "creating user" do
 

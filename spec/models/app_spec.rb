@@ -24,7 +24,7 @@ describe App do
 
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:mid) }
-  pending { should have_many(:watchers) }
+  it { should have_many(:watchers) }
   it { should have_many(:changes) }
 
   pending "should update checked_at"

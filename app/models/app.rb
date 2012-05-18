@@ -21,7 +21,9 @@ class App < ActiveRecord::Base
   validates_presence_of :name, :mid, :price, :currency
   validates_numericality_of :price, :low, :high, :avg
 
+  has_many :lenses
   has_many :changes
+  has_many :watchers, through: :lenses#, foreign_key: :watcher_id
 
   def to_param
     "#{id} #{name}".parameterize
