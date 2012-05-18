@@ -7,7 +7,7 @@ class CreateApps < ActiveRecord::Migration
       t.string :currency, limit: 3, default: 'GBP'
       t.money :high
       t.money :low
-      t.money :avg
+      # t.money :avg
       t.string :type, limit: 7, allow_null: false
       t.integer :watcher_count, default: 0
       t.timestamps

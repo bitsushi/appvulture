@@ -25,6 +25,7 @@ describe "Lenses" do
     FactoryGirl.create(:app)
     login!
     visit new_lens_path
+
     # select_second_option('lens_app_id')
     click_button 'Create Lens'
     page.should have_content('created lens')

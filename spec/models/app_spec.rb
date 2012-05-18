@@ -33,7 +33,7 @@ describe App do
   it { should validate_numericality_of(:price) }
   it { should validate_numericality_of(:low) }
   it { should validate_numericality_of(:high) }
-  it { should validate_numericality_of(:avg) }
+  # it { should validate_numericality_of(:avg) }
   it { should validate_presence_of(:currency) }
 
   it "should be searchable" do
@@ -65,7 +65,7 @@ describe App do
     FactoryGirl.build(:app, mid: '33').should_not be_valid
   end
 
-  it "should calculate avg"
+  # it "should calculate avg"
 
   it "should have parameterized url"
   #   app_path(app).should_not include("#{app.id} #{app.name}".parameterize)

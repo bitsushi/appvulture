@@ -17,9 +17,13 @@
 #
 
 class App < ActiveRecord::Base
+
+  require 'json'
+  require 'open-uri'
+
   attr_accessible :currency, :mid, :name, :price#, :checked_at
   validates_presence_of :name, :mid, :price, :currency
-  validates_numericality_of :price, :low, :high, :avg
+  validates_numericality_of :price, :low, :high#, :avg
   validates_format_of :currency, with: /[A-Z]{3}/
   validates_uniqueness_of :mid, scope: 'type'
 
@@ -58,9 +62,6 @@ class App < ActiveRecord::Base
       self.save!
     end
   end
-
-  require 'json'
-  require 'open-uri'
 
   def self.uber_find_or_create_by_mid(mid)
     unless app = App.limit(1).find_by_mid(mid)
