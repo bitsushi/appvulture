@@ -34,4 +34,9 @@ Appvulture::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+
+  # sending email
+  config.action_mailer.default_url_options = { :host => "appvulture.dev" }
+  config.action_mailer.delivery_method = :ses
 end

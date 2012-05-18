@@ -13,3 +13,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+.powenv
+/config/initializers/_env_vars.rb

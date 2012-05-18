@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20120518074344) do
     t.string   "state",                  :limit => 20
     t.string   "auth_token"
     t.string   "password_reset_token"
-    t.string   "password_reset_sent_at"
+    t.datetime "password_reset_sent_at"
     t.datetime "created_at",                            :null => false
     t.datetime "updated_at",                            :null => false
   end

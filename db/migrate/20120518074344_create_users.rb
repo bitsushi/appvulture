@@ -8,11 +8,12 @@ class CreateUsers < ActiveRecord::Migration
       t.string :state, limit: 20, allow_null: false
       t.string :auth_token
       t.string :password_reset_token
-      t.string :password_reset_sent_at
+      t.datetime :password_reset_sent_at
 
       t.timestamps
     end
     add_index :users, :email
-    add_index :users, :state
+    add_index :users, :auth_token
+    # add_index :users, :state
   end
 end

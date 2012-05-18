@@ -18,6 +18,7 @@
 require 'spec_helper'
 
 describe User do
+  let(:user) { FactoryGirl.create(:user) }
 
   describe "creating user" do
 
@@ -40,7 +41,7 @@ describe User do
     end
 
     it "should have an initial state" do
-      FactoryGirl.create(:user).state.should_not be_blank
+      user.state.should_not be_blank
     end
 
     it "should generate unique auth_token on create" do
@@ -52,23 +53,24 @@ describe User do
 
   end
 
-  # pending "#send_password_reset" do
-  #   let(:user) { FactoryGirl.create(:user) }
-  #   it "generates a unique password_reset_token each time" do
-  #     user.send_password_reset
-  #     last_token = user.password_reset_token
-  #     user.send_password_reset
-  #     user.password_reset_token.should_not eq(last_token)
-  #   end
-  #
-  #   it "saves the time the password reset was sent" do
-  #     user.send_password_reset
-  #     user.reload.password_reset_sent_at.should be_present
-  #   end
-  #
-  #   it "delivers email to user" do
-  #     user.send_password_reset
-  #     last_email.to.should include(user.email)
-  #   end
-  # end
+  describe "#send_password_reset" do
+
+    it "generates a unique password_reset_token each time" do
+      user.send_password_reset
+      last_token = user.password_reset_token
+      user.send_password_reset
+      user.password_reset_token.should_not eq(last_token)
+    end
+
+    it "saves the time the password reset was sent" do
+      user.send_password_reset
+      user.reload.password_reset_sent_at.should be_present
+    end
+
+    it "delivers email to user" do
+      user.send_password_reset
+      last_email.to.should include(user.email)
+    end
+
+  end
 end
