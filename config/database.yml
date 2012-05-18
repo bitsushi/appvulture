@@ -4,15 +4,13 @@ development:
   database: appvulture_development
   pool: 5
   username: john
-  password: 
 
 test:
   adapter:  postgresql
   encoding: unicode
-  database: appvulture_development
+  database: appvulture_test
   pool: 5
   username: john
-  password: 
 
 # # SQLite version 3.x
 # #   gem install sqlite3

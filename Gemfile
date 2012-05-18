@@ -19,6 +19,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'database_cleaner'
 gem 'jquery-rails'
 gem 'bcrypt-ruby'
 gem 'state_machine'

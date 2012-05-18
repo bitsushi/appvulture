@@ -1,5 +1,11 @@
 <% title "Apps" %>
 
+
+<%= form_tag request.fullpath, method: 'GET' do %>
+  <%= text_field_tag :query, params[:query], type: 'search' %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
 <%= paginate @apps %>
 
 <table>
