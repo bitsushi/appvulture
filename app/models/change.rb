@@ -16,4 +16,8 @@ class Change < ActiveRecord::Base
   before_create do
     self.at = Time.now
   end
+
+  def to_s
+    "#{price.to_f}, #{at.to_s(:short)}"
+  end
 end

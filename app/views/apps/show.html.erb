@@ -1,0 +1,12 @@
+<% title @app %>
+
+<div id="current_price"><%= @app.price %></div>
+
+<h3>Changes</h3>
+<div id="changes">
+  <ul>
+  <% @app.changes.each do |change| %>
+  <li><%= change %></li>
+  <% end %>
+  </ul>
+</div>
