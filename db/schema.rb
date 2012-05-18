@@ -11,7 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120518074344) do
+ActiveRecord::Schema.define(:version => 20120518103050) do
+
+  create_table "apps", :force => true do |t|
+    t.string   "name",          :limit => 50
+    t.string   "mid",           :limit => 40
+    t.decimal  "price",                       :precision => 6, :scale => 2, :default => 0.0
+    t.string   "currency",      :limit => 3,                                :default => "GBP"
+    t.decimal  "high",                        :precision => 6, :scale => 2, :default => 0.0
+    t.decimal  "low",                         :precision => 6, :scale => 2, :default => 0.0
+    t.decimal  "avg",                         :precision => 6, :scale => 2, :default => 0.0
+    t.string   "type",          :limit => 7
+    t.integer  "watcher_count",                                             :default => 0
+    t.datetime "created_at",                                                                   :null => false
+    t.datetime "updated_at",                                                                   :null => false
+  end
+
+  add_index "apps", ["id", "type"], :name => "index_apps_on_id_and_type"
+  add_index "apps", ["mid"], :name => "index_apps_on_mid"
+
+  create_table "changes", :force => true do |t|
+    t.integer  "app_id"
+    t.decimal  "price",  :precision => 6, :scale => 2, :default => 0.0
+    t.datetime "at"
+  end
+
+  add_index "changes", ["app_id"], :name => "index_changes_on_app_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :limit => 100

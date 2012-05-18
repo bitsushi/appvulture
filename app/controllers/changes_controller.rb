@@ -1,0 +1,2 @@
+class ChangesController < ApplicationController
+end

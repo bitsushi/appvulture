@@ -10,6 +10,8 @@ describe UserMailer do
       mail.to.should eq([user.email])
       mail.body.should match(edit_password_reset_path(user.password_reset_token))
     end
+
+    it "sends user signup confirmation"
   end
 
 end

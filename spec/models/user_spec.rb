@@ -10,7 +10,7 @@
 #  state                  :string(20)
 #  auth_token             :string(255)
 #  password_reset_token   :string(255)
-#  password_reset_sent_at :string(255)
+#  password_reset_sent_at :datetime
 #  created_at             :datetime        not null
 #  updated_at             :datetime        not null
 #
@@ -19,6 +19,8 @@ require 'spec_helper'
 
 describe User do
   let(:user) { FactoryGirl.create(:user) }
+
+  pending { should have_many(:watched_apps) }
 
   describe "creating user" do
 

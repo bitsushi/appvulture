@@ -10,7 +10,7 @@
 #  state                  :string(20)
 #  auth_token             :string(255)
 #  password_reset_token   :string(255)
-#  password_reset_sent_at :string(255)
+#  password_reset_sent_at :datetime
 #  created_at             :datetime        not null
 #  updated_at             :datetime        not null
 #
