@@ -34,6 +34,10 @@ class App < ActiveRecord::Base
     "#{id} #{name}".parameterize
   end
 
+  def url
+    "http://itunes.apple.com/gb/app/id#{mid}"
+  end
+
   def to_s
     name
   end

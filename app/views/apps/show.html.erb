@@ -1,6 +1,6 @@
 <% title @app %>
 
-<div id="current_price"><%= @app.price %></div>
+<div id="current_price"><%= price @app.price %></div>
 
 <h3>Changes</h3>
 <div id="changes">
@@ -15,7 +15,11 @@
   <% end %>
 </div>
 
+<%= link_to "Get App", @app.url %>
+
 <% if @lens %>
+  <%= link_to "stop watching", lens_path(@lens.id, return_to: app_path(@app)), method: 'delete' %>
+
   you are watching this app
 <% else %>
   <%= link_to "watch this app", new_lens_path(app_id: @app.id) %>

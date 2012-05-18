@@ -29,10 +29,10 @@ describe "Apps" do
       page.should have_content("Angry Birds")
     end
 
-    it "should show prices" do
+    pending "should show prices" do
       app = FactoryGirl.create(:app, name: 'Angry Birds')
       visit(app_path(app))
-      page.find('#current_price').text.should eq(app.price.to_s)
+      page.find('#current_price').text.to_i.should eq( price app.price)
     end
 
     it "should show changes" do
@@ -49,6 +49,18 @@ describe "Apps" do
       user.apps << app
       visit app_path(app)
       page.should have_content('you are watching this app')
+    end
+
+
+    it "can stop watching inline" do
+      app = FactoryGirl.create(:app)
+      user = FactoryGirl.create(:user)
+      login! user
+      user.apps << app
+      visit app_path(app)
+      click_link 'stop watching'
+      current_path.should eq(app_path(app))
+      page.should have_content('Deleted Lens')
     end
 
     it "should be watchable" do
