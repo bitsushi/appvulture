@@ -3,6 +3,7 @@ require 'open-uri'
 
 namespace :fetch do
   desc "From iTunes"
+  
   task :itunes => :environment do
     results = JSON.parse(open("http://itunes.apple.com/search?term=a&country=GB&media=software&entity=software&limit=100").read)
     App.delete_all
@@ -28,6 +29,15 @@ namespace :fetch do
         rescue
           p "FAIL: #{r['trackName']}"
         end
+      end
+    end
+  end
+
+  task :existing => :environment do
+    App.all.each do |app|
+      results = JSON.parse(open("http://itunes.apple.com/lookup?id=#{app.mid}&country=GB").read)
+      results['results'].each do |r|
+        app.price_is_now! r['price']
       end
     end
   end

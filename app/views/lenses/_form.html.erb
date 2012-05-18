@@ -17,5 +17,14 @@
   <% end %>
   </div>
 
+  <div class="field">
+    Notify me if price
+    <ul>
+      <li><%= f.radio_button :rule, Lens::RULES[:changes] %><%= f.label "rule_#{Lens::RULES[:changes]}", 'changes (increases or decreases)' %></li>
+      <li><%= f.radio_button :rule, Lens::RULES[:drops] %><%= f.label "rule_#{Lens::RULES[:drops]}", 'drops' %></li>
+      <li><%= f.radio_button :rule, Lens::RULES[:falls_below] %><%= f.label "rule_#{Lens::RULES[:falls_below]}", 'equals or falls below' %><%= f.number_field :desired_price, max: 10 %></li>
+    </ul>
+  </div>
+
 <%= f.submit %>
 <% end %>

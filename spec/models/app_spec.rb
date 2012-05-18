@@ -43,6 +43,7 @@ describe App do
     App.text_search('super').size.should eq(2)
   end
 
+  it { should validate_format_of(:currency).with('GBP') }
 
   it "should maintain watcher count" do
     app.watcher_count.should eq(0)
@@ -59,10 +60,11 @@ describe App do
     App.uber_find_or_create_by_mid('520564038').name.should eq('Leonardo da Vinci: Anatomy')
   end
 
-  it "should have 3 letter currency"
-  it "should validate uniqueness of mid with scope of type"
-  it "should record high"
-  it "should record low"
+  it "should validate uniqueness of mid with scope of type" do
+    FactoryGirl.create(:app, mid: '33')
+    FactoryGirl.build(:app, mid: '33').should_not be_valid
+  end
+
   it "should calculate avg"
 
   it "should have parameterized url"

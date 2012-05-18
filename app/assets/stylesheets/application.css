@@ -14,10 +14,12 @@
 
 body {
 	background-color: #EEE;
+  margin-bottom: 20px;
 }
 
 #logo {
 	font-size: 2em;
+  font-weight: bold;
 }
 
 a {

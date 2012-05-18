@@ -11,6 +11,8 @@
 <table>
 <thead>
   <th>Price</th>
+  <th>Low</th>
+  <th>High</th>
   <th>App</th>
   <th># Watchers</th>
 </thead>
@@ -18,6 +20,8 @@
 <% @apps.each do |app| %>
 <tr>
   <td><%= price app.price %></td>
+  <td><%= app.low == app.price ? '-' : price(app.low) %></td>
+  <td><%= app.high == app.price ? '-' : price(app.high) %></td>
   <td><%= link_to app, app %></td>
   <td>
     <%= app.watcher_count %>

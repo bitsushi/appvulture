@@ -20,6 +20,8 @@ class App < ActiveRecord::Base
   attr_accessible :currency, :mid, :name, :price#, :checked_at
   validates_presence_of :name, :mid, :price, :currency
   validates_numericality_of :price, :low, :high, :avg
+  validates_format_of :currency, with: /[A-Z]{3}/
+  validates_uniqueness_of :mid, scope: 'type'
 
   has_many :lenses, dependent: :destroy#, after_remove: :decrement_watcher_count
   # def decrement_watcher_count(record)
@@ -40,7 +42,7 @@ class App < ActiveRecord::Base
 
   def self.text_search(query)
     if query.present?
-      where('name @@ :q', q: query)
+      where('name ILIKE :q', q: "%#{query}%")
     else
       scoped
     end
@@ -51,8 +53,10 @@ class App < ActiveRecord::Base
   end
 
   def price_is_now!(new_price)
-    self.changes.build(price: new_price)
-    self.save!
+    if new_price != price
+      self.changes.build(price: new_price)
+      self.save!
+    end
   end
 
   require 'json'

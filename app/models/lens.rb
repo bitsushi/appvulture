@@ -26,5 +26,11 @@ class Lens < ActiveRecord::Base
   before_create do
     self.initial_price = app.price
   end
+
+  RULES = {
+    changes: 0,
+    drops: 1,
+    falls_below: 2
+  }
 end
 

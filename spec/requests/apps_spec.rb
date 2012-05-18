@@ -29,11 +29,11 @@ describe "Apps" do
       page.should have_content("Angry Birds")
     end
 
-    pending "should show prices" do
-      app = FactoryGirl.create(:app, name: 'Angry Birds')
-      visit(app_path(app))
-      page.find('#current_price').text.to_i.should eq( price app.price)
-    end
+    # pending "should show prices" do
+    #   app = FactoryGirl.create(:app, name: 'Angry Birds')
+    #   visit(app_path(app))
+    #   page.find('#current_price').text.to_i.should eq( price app.price)
+    # end
 
     it "should show changes" do
       app = FactoryGirl.create(:app, name: 'Angry Birds')
