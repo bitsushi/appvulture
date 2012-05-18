@@ -4,11 +4,15 @@
 
 <h3>Changes</h3>
 <div id="changes">
-  <ul>
-  <% @app.changes.each do |change| %>
-  <li><%= change %></li>
+  <% if @app.changes.empty? %>
+    This app's price has not yet changed
+  <% else %>
+    <ul>
+    <% @app.changes.each do |change| %>
+    <li><%= change %></li>
+    <% end %>
+    </ul>
   <% end %>
-  </ul>
 </div>
 
 <% if @lens %>

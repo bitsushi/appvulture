@@ -27,8 +27,8 @@ class User < ActiveRecord::Base
 
   before_create { generate_token(:auth_token) }
 
-  has_many :lenses, foreign_key: :watcher_id
-  has_many :apps, through: :lenses, foreign_key: :app_id #make into watched_apps
+  has_many :lenses, foreign_key: :watcher_id, dependent: :destroy
+  has_many :apps, through: :lenses, foreign_key: :app_id, dependent: :destroy #make into watched_apps
 
   def watching?(app)
     app.watchers.include?(self)

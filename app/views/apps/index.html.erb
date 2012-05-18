@@ -1,10 +1,21 @@
 <% title "Apps" %>
 
 <table>
+<thead>
+  <th>Price</th>
+  <th>App</th>
+  <th># Watchers</th>
+</thead>
+<tbody>
 <% @apps.each do |app| %>
-  <tr>
+<tr>
   <td><%= price app.price %></td>
   <td><%= link_to app, app %></td>
-  </tr>
+  <td>
+    <%= app.watcher_count %>
+    <%= link_to "watch", new_lens_path(app_id: app.id) %>
+  </td>
+</tr>
 <% end %>
+</tbody>
 </table>

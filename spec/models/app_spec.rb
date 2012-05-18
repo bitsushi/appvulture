@@ -36,6 +36,15 @@ describe App do
   it { should validate_numericality_of(:avg) }
   it { should validate_presence_of(:currency) }
 
+  it "should maintain watcher count" do
+    app.watcher_count.should eq(0)
+    user = FactoryGirl.create(:user)
+    user.apps << app
+    app.reload.watcher_count.should eq(1)
+    user.apps.delete(app)
+    app.reload.watcher_count.should eq(0)
+  end
+
   it "should have 3 letter currency"
   it "should validate uniqueness of mid with scope of type"
   it "should record high"

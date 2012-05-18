@@ -21,9 +21,14 @@ class App < ActiveRecord::Base
   validates_presence_of :name, :mid, :price, :currency
   validates_numericality_of :price, :low, :high, :avg
 
-  has_many :lenses
+  has_many :lenses, dependent: :destroy#, after_remove: :decrement_watcher_count
+  # def decrement_watcher_count(record)
+  #   p "REMOVING"
+  #   App.decrement_counter(:watcher_count, id)
+  # end
   has_many :changes
-  has_many :watchers, through: :lenses#, foreign_key: :watcher_id
+  has_many :watchers, through: :lenses, dependent: :destroy
+  #, foreign_key: :watcher_id
 
   def to_param
     "#{id} #{name}".parameterize

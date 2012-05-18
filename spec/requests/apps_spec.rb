@@ -15,6 +15,11 @@ describe "Apps" do
 
   describe "show page" do
 
+    # it "should not show user actions to unauthenticated users" do
+    #   visit app_path(FactoryGirl.create(:app))
+    #   page.should have_content('watch')
+    # end
+
     it "should have show page" do
       app = FactoryGirl.create(:app, name: 'Angry Birds')
       visit root_path
