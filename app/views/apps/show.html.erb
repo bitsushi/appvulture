@@ -10,3 +10,9 @@
   <% end %>
   </ul>
 </div>
+
+<% if @lens %>
+  you are watching this app
+<% else %>
+  <%= link_to "watch this app", new_lens_path(app_id: @app.id) %>
+<% end %>

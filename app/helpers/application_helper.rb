@@ -9,4 +9,12 @@ module ApplicationHelper
     @show_title
   end
 
+  def price value
+    if value == 0
+      'FREE'
+    else
+      number_with_precision value, precision: 2
+    end
+  end
+
 end

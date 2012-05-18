@@ -13,7 +13,7 @@
 #
 
 class Lens < ActiveRecord::Base
-  attr_accessible :desired_price, :initial_price, :app_id, :rule
+  attr_accessible :desired_price, :initial_price, :app_id, :rule, :app
   belongs_to :app
   belongs_to :watcher, class_name: 'User'
   validates_presence_of :initial_price, :desired_price, :watcher, :app, :rule

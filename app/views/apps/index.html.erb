@@ -1,7 +1,10 @@
 <% title "Apps" %>
 
-<ul>
+<table>
 <% @apps.each do |app| %>
-  <li><%= link_to app, app %></li>
+  <tr>
+  <td><%= price app.price %></td>
+  <td><%= link_to app, app %></td>
+  </tr>
 <% end %>
-</ul>
+</table>

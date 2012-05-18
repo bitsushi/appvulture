@@ -31,7 +31,10 @@ describe Lens do
   end
 
   it "desired_price should be less app price" do
-    FactoryGirl.build(:lens, desired_price: 99999).errors_on(:desired_price).should include('must be less than the app price')
+    app = FactoryGirl.build(:app, price: 10)
+    FactoryGirl.build(:lens, app: app, desired_price: 99999).errors_on(:desired_price).should include('must be less than the app price')
+    # app = FactoryGirl.build(:app, price: 0)
+    # FactoryGirl.build(:lens, app: app, desired_price: 0).errors_on(:desired_price).should_not include('must be less than the app price')
   end
 
   it "should validate uniqueness of :app_id with the scope of :watcher_id" do

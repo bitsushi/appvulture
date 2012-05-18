@@ -1,0 +1,10 @@
+<% title "Your Lenses" %>
+
+<table>
+<% @lenses.each do |lens| %>
+  <tr>
+    <td><%= link_to lens.app, lens.app %></td>
+    <td><%= link_to 'delete', lens, method: 'delete', confirm: 'are you sure?' %></td>
+  </tr>
+<% end %>
+</table>

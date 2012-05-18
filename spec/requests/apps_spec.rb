@@ -37,5 +37,23 @@ describe "Apps" do
       page.should have_css('#changes')
     end
 
+    it "should say if authenticated user has lens" do
+      app = FactoryGirl.create(:app)
+      user = FactoryGirl.create(:user)
+      login! user
+      user.apps << app
+      visit app_path(app)
+      page.should have_content('you are watching this app')
+    end
+
+    it "should be watchable" do
+      app = FactoryGirl.create(:app)
+      user = FactoryGirl.create(:user)
+      login! user
+      visit app_path(app)
+      click_link 'watch this app'
+      current_path.should eq( new_lens_path )
+    end
+
   end
 end
