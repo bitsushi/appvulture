@@ -21,6 +21,18 @@ describe User do
   let(:user) { FactoryGirl.create(:user) }
 
   it { should have_many(:apps) }
+  it "should have watching? method" do
+    app = FactoryGirl.create(:app)
+    user.watching?(app).should be_false
+    user.apps << app
+    user.watching?(app).should be_true
+  end
+
+  # it "should have lens_for method" do
+  #   app = FactoryGirl.create(:app)
+  #   user.apps << app
+  #   user.lens_for(app).should eq(app.lens)
+  # end
 
   describe "creating user" do
 

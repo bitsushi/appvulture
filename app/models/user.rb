@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
   has_many :lenses, foreign_key: :watcher_id
   has_many :apps, through: :lenses, foreign_key: :app_id #make into watched_apps
 
+  def watching?(app)
+    app.watchers.include?(self)
+  end
+
   def send_password_reset
     generate_token(:password_reset_token)
     self.password_reset_sent_at = Time.zone.now
