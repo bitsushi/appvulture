@@ -1,7 +1,7 @@
 class CreateApps < ActiveRecord::Migration
   def change
     create_table :apps do |t|
-      t.string :name, limit: 50
+      t.string :name, limit: 100
       t.string :mid, limit: 40
       t.money :price
       t.string :currency, limit: 3, default: 'GBP'

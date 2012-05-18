@@ -17,13 +17,17 @@ namespace :fetch do
         # app.checked_at = Time.now
         app.save
       else
-        App.create!({
-          name: r['trackName'],
-          mid: r['trackId'],
-          price: r['price'],
-          currency: r['currency']
-          # checked_at: Time.now
-        })
+        begin
+          App.create!({
+            name: r['trackName'],
+            mid: r['trackId'],
+            price: r['price'],
+            currency: r['currency']
+            # checked_at: Time.now
+          })
+        rescue
+          p "FAIL: #{r['trackName']}"
+        end
       end
     end
   end
