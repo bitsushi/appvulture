@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'bundler/setup'
+require 'mailman'
+
+# Mailman.config.logger = Logger.new("log/mailman.log")
+Mailman.config.poll_interval = 10
+
+Mailman.config.pop3 = {
+  server: 'pop.gmail.com', port: 995, ssl: true,
+  username: ENV["GMAIL_USERNAME"],
+  password: ENV["GMAIL_PASSWORD"]
+}
+
+Mailman::Application.run do
+  default do
+    r = /apple.com\/(\w\w)\/app\/(.+)\/id(\d+)?/
+    if(m = r.match message.body.to_s)
+      # p message.from.first
+      user = User.auto_find_from_email(message.from.first)
+      app = App.uber_find_or_create_by_mid(m[3])
+      # p user
+      # p app
+      user.apps << app
+      # User.from_email(message.from.first, m[3])
+    end
+  end
+end

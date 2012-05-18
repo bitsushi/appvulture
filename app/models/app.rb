@@ -47,6 +47,24 @@ class App < ActiveRecord::Base
     self.save!
   end
 
+  require 'json'
+  require 'open-uri'
+
+  def self.uber_find_or_create_by_mid(mid)
+    unless app = App.limit(1).find_by_mid(mid)
+      results = JSON.parse(open("http://itunes.apple.com/lookup?id=#{mid}&country=GB").read)
+      results['results'].each do |r|
+        app = App.create!({
+          name: r['trackName'],
+          mid: r['trackId'],
+          price: r['price'],
+          currency: r['currency']
+        })
+      end
+    end
+    return app
+  end
+
   before_update do
     unless changes.empty?
       self.low = [low, changes.last.price].min

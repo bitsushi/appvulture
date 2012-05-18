@@ -21,6 +21,7 @@ end
 gem 'jquery-rails'
 gem 'bcrypt-ruby'
 gem 'state_machine'
+gem 'vcr'
 
 group :test, :development do
   gem 'rspec-rails'
