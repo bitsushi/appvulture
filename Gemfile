@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'mailman', require: false
 gem 'dkim'
 gem "aws-ses", "~> 0.4.4", :require => 'aws/ses'
+gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -19,6 +20,7 @@ end
 
 gem 'jquery-rails'
 gem 'bcrypt-ruby'
+gem 'state_machine'
 
 group :test, :development do
   gem 'rspec-rails'

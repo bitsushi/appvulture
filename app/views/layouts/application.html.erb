@@ -8,6 +8,24 @@
 </head>
 <body>
 
+  <header>
+    <%= link_to "AppVulture", root_path, id: "logo" %>
+    <div id="user_nav">
+      <% if current_user %>
+        <%#= link_to "Lenses", lenses_path %>
+        Logged in as <%= current_user.email %>
+        <%= link_to "Logout", logout_path %>
+      <% else %>
+        <%= link_to "Signup", signup_path %>
+        <%= link_to "Login", login_path %>
+      <% end %>
+    </div>
+  </header>
+
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: "flash #{name}" %>
+  <% end %>
+
 <%= yield %>
 
 </body>
