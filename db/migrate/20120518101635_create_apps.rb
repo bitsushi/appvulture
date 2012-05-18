@@ -13,6 +13,7 @@ class CreateApps < ActiveRecord::Migration
       t.timestamps
     end
 
+    add_index :apps, :name
     add_index :apps, :mid
     add_index :apps, [:id, :type]
   end

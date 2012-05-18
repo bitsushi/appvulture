@@ -17,7 +17,7 @@
 #
 
 class App < ActiveRecord::Base
-  attr_accessible :currency, :mid, :name, :price
+  attr_accessible :currency, :mid, :name, :price#, :checked_at
   validates_presence_of :name, :mid, :price, :currency
   validates_numericality_of :price, :low, :high, :avg
 

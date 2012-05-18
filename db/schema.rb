@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20120518111434) do
 
   add_index "apps", ["id", "type"], :name => "index_apps_on_id_and_type"
   add_index "apps", ["mid"], :name => "index_apps_on_mid"
+  add_index "apps", ["name"], :name => "index_apps_on_name"
 
   create_table "changes", :force => true do |t|
     t.integer  "app_id"
@@ -63,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20120518111434) do
     t.datetime "updated_at",                            :null => false
   end
 
+  add_index "users", ["auth_token"], :name => "index_users_on_auth_token"
   add_index "users", ["email"], :name => "index_users_on_email"
-  add_index "users", ["state"], :name => "index_users_on_state"
 
 end
