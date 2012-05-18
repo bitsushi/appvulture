@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20120518111434) do
   create_table "lenses", :force => true do |t|
     t.integer  "watcher_id"
     t.integer  "app_id"
-    t.integer  "rule",          :limit => 1,                               :default => 0
+    t.integer  "rule",          :limit => 2,                               :default => 0
     t.decimal  "initial_price",              :precision => 6, :scale => 2, :default => 0.0
     t.decimal  "desired_price",              :precision => 6, :scale => 2, :default => 0.0
     t.datetime "created_at",                                                                :null => false

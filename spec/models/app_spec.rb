@@ -36,6 +36,14 @@ describe App do
   it { should validate_numericality_of(:avg) }
   it { should validate_presence_of(:currency) }
 
+  it "should be searchable" do
+    FactoryGirl.create(:app, name: 'Angry Birds')
+    FactoryGirl.create(:app, name: 'Super Crate Box')
+    FactoryGirl.create(:app, name: 'Super Meat Boy')
+    App.text_search('super').size.should eq(2)
+  end
+
+
   it "should maintain watcher count" do
     app.watcher_count.should eq(0)
     user = FactoryGirl.create(:user)
