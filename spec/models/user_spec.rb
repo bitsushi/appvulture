@@ -28,6 +28,12 @@ describe User do
     user.watching?(app).should be_true
   end
 
+  it "should have uber_find_or_create_by_email" do
+    FactoryGirl.create(:user, email: 'test@test.com')
+    User.uber_find_or_create_by_email('test@test.com').email.should eq('test@test.com')
+    User.uber_find_or_create_by_email('newuser@test.com').email.should eq('newuser@test.com')
+  end
+
   # it "should have lens_for method" do
   #   app = FactoryGirl.create(:app)
   #   user.apps << app

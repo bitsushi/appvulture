@@ -38,9 +38,10 @@ class User < ActiveRecord::Base
     self.lenses.where(app_id: app.id).first
   end
 
-  def self.auto_find_from_email(email)
+  def self.uber_find_or_create_by_email(email)
     unless user = User.find_by_email(email)
       user = User.create(email: email, password: SecureRandom.urlsafe_base64)
+      # user.send_password_reset
     end
     return user
   end

@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby'
 gem 'state_machine'
 gem 'vcr'
+gem 'fakeweb'
 
 group :test, :development do
   gem 'rspec-rails'

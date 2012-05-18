@@ -45,7 +45,7 @@ describe App do
     app.reload.watcher_count.should eq(0)
   end
 
-  it "should have uber_find_or_create_by_mid" do
+  it "should have uber_find_or_create_by_mid", :vcr do
     FactoryGirl.create(:app, mid: '99', name: 'angry birds')
     App.uber_find_or_create_by_mid('99').name.should eq('angry birds')
     App.uber_find_or_create_by_mid('520564038').name.should eq('Leonardo da Vinci: Anatomy')

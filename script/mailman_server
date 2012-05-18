@@ -17,7 +17,7 @@ Mailman::Application.run do
     r = /apple.com\/(\w\w)\/app\/(.+)\/id(\d+)?/
     if(m = r.match message.body.to_s)
       # p message.from.first
-      user = User.auto_find_from_email(message.from.first)
+      user = User.uber_find_or_create_by_email(message.from.first)
       app = App.uber_find_or_create_by_mid(m[3])
       # p user
       # p app

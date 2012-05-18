@@ -1,0 +1,100 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://itunes.apple.com/lookup?id=520564038&country=GB
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      x-apple-orig-url-path:
+      - /lookup?id=520564038&country=GB
+      x-apple-translated-wo-url:
+      - /WebObjects/MZStoreServices.woa/ws/wsLookup?id=520564038&country=GB
+      x-apple-application-site:
+      - ST11
+      x-apple-max-age:
+      - '3600'
+      content-type:
+      - text/javascript; charset=utf-8
+      x-apple-application-instance:
+      - '2079007'
+      x-webobjects-loadaverage:
+      - '0'
+      cache-control:
+      - no-transform, max-age=13
+      date:
+      - Fri, 18 May 2012 16:31:31 GMT
+      content-length:
+      - '4806'
+      connection:
+      - keep-alive
+      x-apple-partner:
+      - origin.0
+    body:
+      encoding: US-ASCII
+      string: ! "\n\n\n{\n \"resultCount\":1,\n \"results\": [\n{\"kind\":\"software\",
+        \"features\":[], \"supportedDevices\":[\"iPad23G\", \"iPadWifi\", \"iPad2Wifi\",
+        \"iPad3G\"], \"isGameCenterEnabled\":false, \"artistViewUrl\":\"http://itunes.apple.com/gb/artist/touch-press/id406795425?uo=4\",
+        \"artworkUrl60\":\"http://a2.mzstatic.com/us/r1000/076/Purple/v4/bf/d2/f3/bfd2f3a9-2e45-6744-9489-bb9ae668a406/icon72.png\",
+        \"screenshotUrls\":[], \n\"ipadScreenshotUrls\":[\"http://a1.mzstatic.com/us/r1000/077/Purple/v4/3c/5e/ad/3c5ead16-7691-3cb5-7501-0e9f5c255015/mza_5402561173540740685.1024x1024-65.jpg\",
+        \"http://a4.mzstatic.com/us/r1000/073/Purple/v4/e5/87/e4/e587e46e-068b-efff-4952-931fadb91683/mza_8794017348697877257.1024x1024-65.jpg\",
+        \"http://a5.mzstatic.com/us/r1000/070/Purple/v4/de/aa/cd/deaacdbe-0753-75ce-14f8-f6f77b94a860/mza_8388439790208524931.1024x1024-65.jpg\",
+        \"http://a2.mzstatic.com/us/r1000/087/Purple/v4/2f/8a/60/2f8a600d-7727-520a-22e5-31e4dd0578bf/mza_1604091412754412005.1024x1024-65.jpg\",
+        \"http://a5.mzstatic.com/us/r1000/113/Purple/v4/2c/3f/89/2c3f899d-9d7a-a267-6ecc-0e6aabeb3cf0/mza_3861071594092418352.1024x1024-65.jpg\"],
+        \"artworkUrl512\":\"http://a5.mzstatic.com/us/r1000/120/Purple/v4/8d/74/c3/8d74c35e-0615-d8ed-4474-2195f78251ac/bbz3awy3YywvwJ4iYqjdtM-temp-upload.opoxiuna.jpg\",
+        \"artistId\":406795425, \"artistName\":\"Touch Press\", \"price\":9.99, \"version\":\"1.0.2\",
+        \n\"description\":\"This sublime collection of drawings of human anatomy by
+        Leonardo da Vinci is one of the greatest treasures from the Royal Collection
+        of Her Majesty Queen Elizabeth II at Windsor Castle.  All 268 pages from Leonardo's
+        notebooks are presented here at the highest resolution, optimised for the
+        pin-sharp retina display of the new iPad. For the first time it is possible
+        for anyone with an iPad to own and explore this remarkable testament to Leonardo's
+        scientific and artistic genius.\\n\\nThis new digital edition has been specially
+        created for the iPad by Touch Press, the people responsible for The Elements
+        and Solar System, working in close partnership with the Royal Collection.
+        \ The app provides the following special features:\\n\\n\\u2022  Beautiful
+        interactive book interface\\n\\n\\u2022  All 268 of Leonardo\\u2019s anatomical
+        drawings pinch-zoomable at high resolution\\n\\n\\u2022  Takes full advantage
+        of the new iPad's retina display\\n\\n\\u2022  A magic spyglass to decode
+        Leonardo\\u2019s mirror writing\\n\\n\\u2022  Touch any of Leonardo's extensive
+        notes to read  in situ a typeset English translation\\n\\n\\u2022  Eleven
+        story chapters, written by Martin Clayton, Senior Curator of Prints and Drawings
+        at Windsor Castle, explaining Leonardo\\u2019s anatomical investigations and
+        presenting over 70 selected works with interactive features\\n\\n\\u2022  Integrated
+        3D anatomical models from world-leading medical animators Primal Pictures,
+        carefully matched to Leonardo\\u2019s illustrations and made interactive using
+        Touch Press rotational technology\\n\\n\\u2022  Expert interviews discussing
+        the significance of Leonardo\\u2019s anatomical discoveries\\n\\n\\u2022  Comprehensive
+        catalogue text for all drawings in the exhibition Leonardo da Vinci: Anatomist
+        at The Queen\\u2019s Gallery, Buckingham Palace (4 May \\u2013 7 October 2012)\\n\\n\\u2022
+        \ Intelligent keyword searching and collection navigation via a human body
+        interface\\n\\nThis beautiful interactive edition of Leonardo da Vinci's anatomical
+        notebooks transcends the printed page. Here Leonardo's work is presented in
+        a way that is both illuminating and a pleasure to explore.  This is an edition
+        for the 21st Century in a digital form that the archetypal Renaissance Man
+        would most certainly have appreciated and approved.\\n\\nPlease note that
+        a small number of Leonardo da Vinci's anatomical drawings are sexually explicit
+        and parental guidance is advised.\", \"genreIds\":[\"6006\", \"6017\"], \"releaseDate\":\"2012-04-30T07:00:00Z\",
+        \"sellerName\":\"Touch Press LLP\", \"currency\":\"GBP\", \"genres\":[\"Reference\",
+        \"Education\"], \"bundleId\":\"com.touchpress.leonardo.english\", \"trackId\":520564038,
+        \"trackName\":\"Leonardo da Vinci: Anatomy\", \"primaryGenreName\":\"Reference\",
+        \"primaryGenreId\":6006, \"releaseNotes\":\"- minor bug fixes including improved
+        performance on the original iPad\", \"wrapperType\":\"software\", \"trackCensoredName\":\"Leonardo
+        da Vinci: Anatomy\", \"trackViewUrl\":\"http://itunes.apple.com/gb/app/leonardo-da-vinci-anatomy/id520564038?mt=8&uo=4\",
+        \"contentAdvisoryRating\":\"12+\", \"artworkUrl100\":\"http://a5.mzstatic.com/us/r1000/120/Purple/v4/8d/74/c3/8d74c35e-0615-d8ed-4474-2195f78251ac/bbz3awy3YywvwJ4iYqjdtM-temp-upload.opoxiuna.jpg\",
+        \"languageCodesISO2A\":[\"EN\"], \"fileSizeBytes\":\"1823049890\", \"sellerUrl\":\"http://touchpress.com/titles/leonardo\",
+        \"averageUserRatingForCurrentVersion\":4.5, \"userRatingCountForCurrentVersion\":27,
+        \"trackContentRating\":\"12+\", \"averageUserRating\":4.5, \"userRatingCount\":27}]\n}\n\n\n"
+    http_version: '1.1'
+  recorded_at: Fri, 18 May 2012 16:31:31 GMT
+recorded_with: VCR 2.1.1
