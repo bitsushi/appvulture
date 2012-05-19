@@ -3,11 +3,19 @@ require 'spec_helper'
 describe "Lenses" do
 
   it "should have index" do
+    visit lenses_url
+    current_path.should eq(login_path)
     visit root_url
     page.should_not have_link("Lenses")
     login!
     click_link "Lenses"
     current_path.should eq( lenses_path )
+  end
+
+  it "should say no lenses if no lenses" do
+    login!
+    visit lenses_path
+    page.should have_content("you have no lenses yet")
   end
 
   it "can delete lens" do

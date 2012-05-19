@@ -21,11 +21,12 @@ class App < ActiveRecord::Base
   require 'json'
   require 'open-uri'
 
-  attr_accessible :currency, :mid, :name, :price#, :checked_at
+  attr_accessible :currency, :mid, :name, :price, :icon#, :checked_at
   validates_presence_of :name, :mid, :price, :currency
   validates_numericality_of :price, :low, :high#, :avg
   validates_format_of :currency, with: /[A-Z]{3}/
   validates_uniqueness_of :mid, scope: 'type'
+  validates_format_of :icon, with: URI::regexp(%w(http https)), allow_nil: true
 
   has_many :lenses, dependent: :destroy#, after_remove: :decrement_watcher_count
   # def decrement_watcher_count(record)
@@ -56,8 +57,15 @@ class App < ActiveRecord::Base
     name
   end
 
+  def check_for_updates
+    results = JSON.parse(open("http://itunes.apple.com/lookup?id=#{mid}&country=GB").read)
+    price_is_now! results['results'][0]['price']
+    checked_at = Time.now
+    save
+  end
+
   def price_is_now!(new_price)
-    if new_price != price
+    if new_price.to_f != price.to_f
       self.changes.build(price: new_price)
       self.save!
     end

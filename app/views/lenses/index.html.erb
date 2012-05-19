@@ -1,5 +1,9 @@
 <% title "Your Lenses" %>
 
+<% if @lenses.empty? %>
+you have no lenses yet
+
+<% else %>
 <table>
 <% @lenses.each do |lens| %>
   <tr>
@@ -8,3 +12,4 @@
   </tr>
 <% end %>
 </table>
+<% end %>

@@ -24,5 +24,6 @@ FactoryGirl.define do
     sequence(:mid) { |n| n }
     price 10.50
     currency "GBP"
+    icon 'http://imgur.com/2dj39.jpg'
   end
 end

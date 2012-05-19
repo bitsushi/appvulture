@@ -1,0 +1,28 @@
+@import 'bourbon';
+
+body {
+	background-color: #EEE;
+  margin-bottom: 20px;
+}
+
+#logo {
+	font-size: 2em;
+  font-weight: bold;
+}
+
+.icon {
+  width: 56px;
+  height: 56px;
+  @include border-radius(8px);
+  display: block;
+  background-position: center center;
+  background-repeat: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+th {
+	text-align: left;
+}

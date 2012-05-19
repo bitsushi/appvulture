@@ -14,17 +14,17 @@
 ActiveRecord::Schema.define(:version => 20120518111434) do
 
   create_table "apps", :force => true do |t|
-    t.string   "name",          :limit => 50
+    t.string   "name",          :limit => 100
     t.string   "mid",           :limit => 40
-    t.decimal  "price",                       :precision => 6, :scale => 2, :default => 0.0
-    t.string   "currency",      :limit => 3,                                :default => "GBP"
-    t.decimal  "high",                        :precision => 6, :scale => 2, :default => 0.0
-    t.decimal  "low",                         :precision => 6, :scale => 2, :default => 0.0
-    t.decimal  "avg",                         :precision => 6, :scale => 2, :default => 0.0
+    t.decimal  "price",                        :precision => 6, :scale => 2, :default => 0.0
+    t.string   "currency",      :limit => 3,                                 :default => "GBP"
+    t.decimal  "high",                         :precision => 6, :scale => 2, :default => 0.0
+    t.decimal  "low",                          :precision => 6, :scale => 2, :default => 0.0
+    t.string   "icon"
     t.string   "type",          :limit => 7
-    t.integer  "watcher_count",                                             :default => 0
-    t.datetime "created_at",                                                                   :null => false
-    t.datetime "updated_at",                                                                   :null => false
+    t.integer  "watcher_count",                                              :default => 0
+    t.datetime "created_at",                                                                    :null => false
+    t.datetime "updated_at",                                                                    :null => false
   end
 
   add_index "apps", ["id", "type"], :name => "index_apps_on_id_and_type"

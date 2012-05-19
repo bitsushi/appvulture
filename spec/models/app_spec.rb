@@ -22,12 +22,15 @@ describe App do
 
   let(:app) { FactoryGirl.create(:app, price: 10) }
 
+  it { should validate_format_of(:icon).with('http://google.com/image.jpg')}
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:mid) }
   it { should have_many(:watchers) }
   it { should have_many(:changes) }
 
   pending "should update checked_at"
+  it "should set checked_at on create"
+  it "should have to_be_checked scope"
 
   it { should validate_presence_of(:price) }
   it { should validate_numericality_of(:price) }

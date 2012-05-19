@@ -25,6 +25,7 @@ gem 'bcrypt-ruby'
 gem 'state_machine'
 gem 'vcr'
 gem 'fakeweb'
+gem 'bourbon'
 
 group :test, :development do
   gem 'rspec-rails'
