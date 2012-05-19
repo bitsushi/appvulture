@@ -1,38 +1,32 @@
-<% title "Apps" %>
+<%# title "Apps", false %>
 
 
-<%= form_tag request.fullpath, method: 'GET' do %>
-  <%= text_field_tag :query, params[:query], type: 'search' %>
-  <%= submit_tag 'Search' %>
-<% end %>
 
-<%= paginate @apps %>
+<form></form><br/>
 
 <table>
-<thead>
-  <th></th>
-  <th>Price</th>
-  <th>Low</th>
-  <th>High</th>
-  <th>App</th>
-  <th># Watchers</th>
-</thead>
 <tbody>
 <% @apps.each do |app| %>
-<tr>
+<tr class="<%= 'watched' if app.is_watched.to_bool %>">
+<!--   <td class="merchant_icon"></td> -->
   <td><div class="icon" style="background-image: url(<%=app.icon%>);"></div></td>
-  <td><%= price app.price %></td>
-  <td><%= app.low == app.price ? '-' : price(app.low) %></td>
-  <td><%= app.high == app.price ? '-' : price(app.high) %></td>
-  <td><%= link_to app, app %></td>
   <td>
+    <%#= price app.price %><br/>
+    <%= app.low == app.price ? ' ' : price(app.low) %><br/>
+    <%= app.high == app.price ? ' ' : price(app.high) %></td>
+  <td><%= link_to app, app %><br/>
+    <span class="details">★★★ Games</span>
+  </td>
+  <td>✓</td>
+  <td></td>
+<!--   <td>
     <%= app.watcher_count %>
     <% if app.is_watched.to_bool %>
 	watching
 	<% else %>
     <%= link_to "watch", new_lens_path(app_id: app.id) %>
     <% end %>
-  </td>
+  </td> -->
 </tr>
 <% end %>
 </tbody>

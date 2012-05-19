@@ -5,33 +5,52 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 </head>
-<body>
+<body class="ios">
 
-  <header>
-    <%= link_to "AppVulture", root_path, id: "logo" %>
-    <div id="user_nav">
-      <% if current_user %>
-        <%#= link_to "Lenses", lenses_path %>
-        Logged in as <%= current_user.email %>
-        <%= link_to "Logout", logout_path %>
-      <% else %>
-        <%= link_to "Signup", signup_path %>
-        <%= link_to "Login", login_path %>
-      <% end %>
-    </div>
-
+<header>
+  <%= link_to "AppVulture", root_path, id: "logo" %>
+  <div id="user_nav">
     <% if current_user %>
-      <%= link_to "Lenses", lenses_path %>
+      <%#= link_to "Lenses", lenses_path %>
+      Logged in as <%= current_user.email %>
+      <%= link_to "Logout", logout_path %>
+    <% else %>
+      <%= link_to "Signup", signup_path %>
+      <%= link_to "Login", login_path %>
     <% end %>
-    <%= link_to "Apps", apps_path %>
-  </header>
+  </div>
+
+   <% if current_user %>
+    <%= link_to "Lenses", lenses_path %>
+  <% end %>
+  <%= link_to "Apps", apps_path %>
+
+  <%= form_tag request.fullpath, method: 'GET' do %>
+  <%= text_field_tag :query, params[:query], type: 'search', placeholder: 'Search' %>
+<% end %>
+</header>
+
+
+<!--  -->
+
+  <ul id="subdomains">
+    <li id="ios"><div class="logo"><%= image_tag 'ios_devices.png' %></div><%= link_to 'iOS', '#' %></li>
+    <li id="mac"><div class="logo"><%= image_tag 'mac.png' %></div><%= link_to 'Mac', '#' %></li>
+    <li id="xbox"><div class="logo"><%= image_tag 'xbox.png' %></div><%= link_to 'Xbox', '#' %></li>
+    <li id="android"><div class="logo"><%= image_tag 'android.png' %></div><%= link_to 'Android', '#' %></li>
+  </ul>
+  <div id="container"
+
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "flash #{name}" %>
   <% end %>
 
   <%= content_tag(:h1, @content_for_title) if @show_title %>
 <%= yield %>
+</div>
 
 </body>
 </html>

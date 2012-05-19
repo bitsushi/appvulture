@@ -1,22 +1,174 @@
 @import 'bourbon';
 
 body {
-	background-color: #EEE;
-  margin-bottom: 20px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Grande';
+}
+header {
+  background: #F5F5F5;
+  a { font-style: Helvetica; letter-spacing: 90%;}
+}
+table,tr,td {
+  padding: 0;
+  margin: 0;
+  border-collapse: collapse;
+  border: none;
+}
+ul#subdomains, ul#subdomains li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+ul#subdomains li {
+  width: 25%;
+  height: 100px;
+  float: left;
+  text-align: center;
+  .logo { font-size: 30px; margin: 10px 0;}
+  font-weight: bold;
+}
+#container {
+  background: none;
+  padding-bottom: 20px;
+  table { width: 95%; display: block; margin: 0px auto 20px; overflow: hidden;}
+}
+.details {
+  font-size: .8em;
+}
+td {
+  padding: 4px;
+}
+tr {
+  background: rgba(0,0,0,0.2);
+  &:hover {
+    .icon { opacity: 1; }
+    a { color: #FFF;}
+    .merchant_icon { color: #444;}
+  }
+}
+tr:nth-child(even) {
+  background: rgba(255,255,255,0.1);
+}
+
+body.ios {
+  background: #222 url(http://subtlepatterns.com/patterns/dvsup.png);
+  color: #EEE;
+  text-shadow: 1px 1px 1px #444;
+  header a {
+  color: #222;
+  }
+  li#ios {
+    background: none;
+  }
+  .details {
+  color: #777;
+  text-shadow: 1px 1px 1px #000;
+  }
+    td {
+  border-bottom: 1px solid #111;
+  }
+
+}
+
+body.xbox {
+  background: #E99C3D;
+  color: #222;
+  text-shadow: 1px 1px 1px #946326;
+  header a {
+    color: #222;
+  }
+  li#xbox {
+    background: none;
+  }
+  .details {
+  color: #946326;
+  text-shadow: 1px 1px 1px #FFBA5A;
+  }
+  tr {
+  background: rgba(0,0,0,0.2);
+  &:hover {
+    .icon { opacity: 1; }
+    a { color: #FFF;}
+    }
+  }
+  tr:nth-child(even) {
+    background: rgba(0,0,0,0.3);
+  }
+  td {
+  border-bottom: 1px solid #BB8942;
+  }
+
+}
+
+
+li#ios {
+  background: #222 url(http://subtlepatterns.com/patterns/dvsup.png);
+  a { color: #FFF;}
+}
+li#mac {
+  background: #5495E6;
+  // @include radial-gradient(50% 50%, circle cover, #8BB4ED, #4F8CD8);
+  a { color: #516A8B;}
+  text-shadow: 1px 1px 1px #AFD6FF;
+}
+li#android {
+  background: #99C400 image-url('androidbg.png');
+  a { color: #6F8D00; text-shadow: 1px 1px 1px #E2FF6A;}
+}
+li#xbox {
+  background: #E99C3D;
+  // @include linear-gradient(#EBB70F, #E99C3D, #CE5712);
+  a { color: #A66912; text-shadow: 1px 1px 1px #FFE063;}
+}
+
+
+a {
+  color: #F1F1F1;
+}
+
+tr.watched {
+  @include linear-gradient(#444, #333);
+  td {
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #222;
+  }
+  a {
+    // color: #EABD3D;
+  }
 }
 
 #logo {
 	font-size: 2em;
   font-weight: bold;
 }
+header {
+  text-shadow: none;
+  color: #111;
+  padding: 10px;
+  a { }
+}
+
+input {
+  margin: 10px 5px;
+  font-size: 20px;
+  // background-color: #111;
+}
 
 .icon {
+  // opacity: 0.8;
   width: 56px;
   height: 56px;
   @include border-radius(8px);
   display: block;
+  background-color: #080808;
   background-position: center center;
   background-repeat: none;
+  border-bottom: 2px solid #000;
+  border-right: 1px solid #000;
+  border-top: 1px solid #222;
+  border-left: 1px solid #222;
 }
 
 a {

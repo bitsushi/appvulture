@@ -18,6 +18,12 @@
 
 class App < ActiveRecord::Base
 
+  #  ios.appvulture.com
+  #  mac.appvulture.com
+  #  android.appvulture.com
+  #  steam.appvultute.com
+  #  xbox.appvulture.com
+
   require 'json'
   require 'open-uri'
 
