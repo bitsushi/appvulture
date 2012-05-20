@@ -20,6 +20,10 @@ require 'spec_helper'
 describe User do
   let(:user) { FactoryGirl.create(:user) }
 
+  it "should .downcase email addresses" do
+    FactoryGirl.create(:user, email: 'Testing@test.com').email.should eq('testing@test.com')
+  end
+
   it { should have_many(:apps) }
   it "should have watching? method" do
     app = FactoryGirl.create(:app)

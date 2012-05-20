@@ -27,6 +27,12 @@ class User < ActiveRecord::Base
 
   before_create { generate_token(:auth_token) }
 
+  before_save :clean_up_attributes
+
+  def clean_up_attributes
+    self.email.downcase!
+  end
+
   has_many :lenses, foreign_key: :watcher_id, dependent: :destroy
   has_many :apps, through: :lenses, foreign_key: :app_id, dependent: :destroy #make into watched_apps
 
