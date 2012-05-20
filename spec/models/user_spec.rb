@@ -21,7 +21,8 @@ describe User do
   let(:user) { FactoryGirl.create(:user) }
 
   it "should .downcase email addresses" do
-    FactoryGirl.create(:user, email: 'Testing@test.com').email.should eq('testing@test.com')
+    FactoryGirl.create(:user, email: 'Testing@test.com')
+    .email.should eq('testing@test.com')
   end
 
   it { should have_many(:apps) }
@@ -34,8 +35,12 @@ describe User do
 
   it "should have uber_find_or_create_by_email" do
     FactoryGirl.create(:user, email: 'test@test.com')
-    User.uber_find_or_create_by_email('test@test.com').email.should eq('test@test.com')
-    User.uber_find_or_create_by_email('newuser@test.com').email.should eq('newuser@test.com')
+
+    User.uber_find_or_create_by_email('test@test.com')
+    .email.should eq('test@test.com')
+
+    User.uber_find_or_create_by_email('newuser@test.com')
+    .email.should eq('newuser@test.com')
   end
 
   # it "should have lens_for method" do
@@ -54,14 +59,18 @@ describe User do
     end
 
     it "should validate email" do
-      FactoryGirl.build(:user, email: 'notvalidemail.com').errors_on(:email).should include('is not formatted properly')
-      FactoryGirl.build(:user, email: 'test+withfilter@email.com').should be_valid
+      FactoryGirl.build(:user, email: 'notvalidemail.com')
+      .errors_on(:email).should include('is not formatted properly')
+
+      FactoryGirl.build(:user, email: 'test+withfilter@email.com')
+      .should be_valid
     end
 
     it { should validate_presence_of(:password) }
 
     it "should validate that password matches password_confirmation" do
-      FactoryGirl.build(:user, password_confirmation: 'unequal').errors_on(:password).should include("doesn't match confirmation")
+      FactoryGirl.build(:user, password_confirmation: 'unequal')
+      .errors_on(:password).should include("doesn't match confirmation")
     end
 
     it "should have an initial state" do
@@ -97,4 +106,5 @@ describe User do
     end
 
   end
+
 end
