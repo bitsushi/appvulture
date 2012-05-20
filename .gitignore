@@ -15,5 +15,6 @@
 /tmp
 .powenv
 /config/dkim_private_key.pem
+config/dkim_private_key.pem
 /config/initializers/_env_vars.rb
 coverage
