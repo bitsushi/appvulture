@@ -1,0 +1,27 @@
+
+li#ios a {
+  background-color: #222;
+  background-image: image-url('ios_devices.png');
+  color: #EEE;
+  // @include linear-gradient(#EBB70F, #E99C3D, #CE5712);
+  color: #AAA;
+  text-shadow: 1px 1px 1px #000;
+}
+
+body.ios {
+  background: #222 url(http://subtlepatterns.com/patterns/dvsup.png);
+  color: #EEE;
+  text-shadow: 1px 1px 1px #444;
+  li#ios {
+    background: none;
+    .logo { opacity: 1;}
+        a { color: #F5F5F5; background-color: none;}
+
+  }
+  .details {
+    color: #777;
+    text-shadow: 1px 1px 1px #000;
+  }
+
+  td { border-bottom: 1px solid #111; }
+}

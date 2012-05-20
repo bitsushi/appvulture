@@ -1,0 +1,3 @@
+class IosesController < AppsController
+
+end

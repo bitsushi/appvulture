@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 </head>
-<body class="ios">
+<body class="<%= request.subdomain %>">
 
 <header>
   <%= link_to "AppVulture", root_path, id: "logo" %>
@@ -16,10 +16,10 @@
     <% if current_user %>
       <%#= link_to "Lenses", lenses_path %>
       Logged in as <%= current_user.email %>
-      <%= link_to "Logout", logout_path %>
+      <%= link_to "Logout", logout_url(subdomain: false) %>
     <% else %>
-      <%= link_to "Signup", signup_path %>
-      <%= link_to "Login", login_path %>
+      <%= link_to "Signup", signup_url(subdomain: false) %>
+      <%= link_to "Login", login_url(subdomain: false) %>
     <% end %>
   </div>
 
@@ -37,10 +37,10 @@
 <!--  -->
 
   <ul id="subdomains">
-    <li id="ios"><div class="logo"><%= image_tag 'ios_devices.png' %></div><%= link_to 'iOS', '#' %></li>
-    <li id="mac"><div class="logo"><%= image_tag 'mac.png' %></div><%= link_to 'Mac', '#' %></li>
-    <li id="xbox"><div class="logo"><%= image_tag 'xbox.png' %></div><%= link_to 'Xbox', '#' %></li>
-    <li id="android"><div class="logo"><%= image_tag 'android.png' %></div><%= link_to 'Android', '#' %></li>
+    <li id="ios"><%= link_to 'iOS', ioses_url(subdomain: 'ios') %></li>
+    <li id="mac"><%= link_to 'Mac', macs_url(subdomain: 'mac') %></li>
+    <li id="xbox"><%= link_to 'Xbox', xboxes_url(subdomain: 'xbox') %></li>
+    <li id="android"><%= link_to 'Android', androids_url(subdomain: 'android') %></li>
   </ul>
   <div id="container"
 

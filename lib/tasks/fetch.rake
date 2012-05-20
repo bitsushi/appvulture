@@ -8,7 +8,7 @@ namespace :fetch do
     results = JSON.parse(open("http://itunes.apple.com/search?term=a&country=GB&media=software&entity=software&limit=100").read)
     App.delete_all
     results['results'].each do |r|
-      if app = App.find_by_mid(r['trackId'].to_s)
+      if app = Ios.find_by_mid(r['trackId'].to_s)
         if app.price.to_f != r['price'].to_f
           app.price_is_now! r['price']
           p "price change"
@@ -19,7 +19,7 @@ namespace :fetch do
         app.save
       else
         # begin
-          App.create!({
+          Ios.create!({
             name: r['trackName'],
             mid: r['trackId'],
             price: r['price'],
@@ -35,6 +35,6 @@ namespace :fetch do
   end
 
   task :existing => :environment do
-    App.limit(10).map(&:check_for_updates)
+    Ios.limit(10).map(&:check_for_updates)
   end
 end

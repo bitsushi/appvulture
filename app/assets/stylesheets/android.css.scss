@@ -1,0 +1,36 @@
+li#android a {
+  background: #99C400 image-url('android.png');
+  // @include linear-gradient(#EBB70F, #E99C3D, #CE5712);
+  color: #6F8D00;
+  text-shadow: 1px 1px 1px #E2FF6A;
+  opacity: 0.8;
+}
+
+body.android {
+  background: #99C400 image-url('androidbg.png') fixed;
+  color: #EEE;
+  text-shadow: 1px 1px 1px #444;
+  li#android {
+    background: none;
+    .logo { opacity: 1;}
+    a { color: #F5F5F5; background-color: transparent; text-shadow: 1px 1px 1px #7C9E00;}
+  }
+  .details {
+    font-weight: bold;
+    color: #384800;
+    text-shadow: 1px 1px 1px #BCE073;
+  }
+  // td { border-bottom: 1px solid #111; }
+
+  tr {
+    background: rgba(0,0,0,0.3);
+    &:hover {
+      .icon { opacity: 1; }
+      a { color: #FFF;}
+      .merchant_icon { color: #444;}
+    }
+  }
+  tr:nth-child(even) {
+    background: rgba(0,0,0,0.2);
+  }
+}

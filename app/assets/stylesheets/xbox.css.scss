@@ -1,0 +1,37 @@
+li#xbox a {
+  background: #E99C3D image-url('xbox.png');
+  // @include linear-gradient(#EBB70F, #E99C3D, #CE5712);
+  color: #A66912; text-shadow: 1px 1px 1px #FFE063;
+}
+
+body.xbox {
+  background: #E99C3D;
+  color: #222;
+  text-shadow: 1px 1px 1px #946326;
+  header a {
+    color: #222;
+  }
+  li#xbox {
+    background: none;
+    .logo { opacity: 1;}
+    a { color: #F5F5F5;}
+  }
+  .details {
+  color: #946326;
+  text-shadow: 1px 1px 1px #FFBA5A;
+  }
+  tr {
+  background: rgba(0,0,0,0.2);
+  &:hover {
+    .icon { opacity: 1; }
+    a { color: #FFF;}
+    }
+  }
+  tr:nth-child(even) {
+    background: rgba(0,0,0,0.3);
+  }
+  td {
+  border-bottom: 1px solid #BB8942;
+  }
+
+}

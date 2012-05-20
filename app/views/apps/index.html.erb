@@ -2,7 +2,7 @@
 
 
 
-<form></form><br/>
+<form></form>
 
 <table>
 <tbody>
@@ -14,7 +14,7 @@
     <%#= price app.price %><br/>
     <%= app.low == app.price ? ' ' : price(app.low) %><br/>
     <%= app.high == app.price ? ' ' : price(app.high) %></td>
-  <td><%= link_to app, app %><br/>
+  <td><%= link_to app, app_path(app) %><br/>
     <span class="details">★★★ Games</span>
   </td>
   <td>✓</td>
@@ -24,7 +24,7 @@
     <% if app.is_watched.to_bool %>
 	watching
 	<% else %>
-    <%= link_to "watch", new_lens_path(app_id: app.id) %>
+    <%#= link_to "watch", new_lens_path(app_id: app.id) %>
     <% end %>
   </td> -->
 </tr>

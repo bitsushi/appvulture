@@ -1,4 +1,8 @@
 @import 'bourbon';
+@import 'ios';
+@import 'mac';
+@import 'xbox';
+@import 'android';
 
 body {
   margin: 0;
@@ -7,13 +11,18 @@ body {
 }
 header {
   background: #F5F5F5;
-  a { font-style: Helvetica; letter-spacing: 90%;}
+  a { font-style: Helvetica; letter-spacing: 90%;  color: #222;
+}
 }
 table,tr,td {
   padding: 0;
   margin: 0;
   border-collapse: collapse;
   border: none;
+}
+tbody,tr {
+  width: 100%;
+  display: block;
 }
 ul#subdomains, ul#subdomains li {
   margin: 0;
@@ -22,12 +31,23 @@ ul#subdomains, ul#subdomains li {
   overflow: hidden;
 }
 ul#subdomains li {
+  font-family: 'Helvetica Neue';
   width: 25%;
   height: 100px;
   float: left;
   text-align: center;
-  .logo { font-size: 30px; margin: 10px 0;}
+  .logo { font-size: 30px; margin: 10px 0; opacity: 0.7;}
   font-weight: bold;
+  a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    vertical-align: bottom;
+    line-height: 170px;
+    background-position: center 15px;
+    background-repeat: no-repeat;
+    opacity: 1;
+  }
 }
 #container {
   background: none;
@@ -52,76 +72,8 @@ tr:nth-child(even) {
   background: rgba(255,255,255,0.1);
 }
 
-body.ios {
-  background: #222 url(http://subtlepatterns.com/patterns/dvsup.png);
-  color: #EEE;
-  text-shadow: 1px 1px 1px #444;
-  header a {
-  color: #222;
-  }
-  li#ios {
-    background: none;
-  }
-  .details {
-  color: #777;
-  text-shadow: 1px 1px 1px #000;
-  }
-    td {
-  border-bottom: 1px solid #111;
-  }
-
-}
-
-body.xbox {
-  background: #E99C3D;
-  color: #222;
-  text-shadow: 1px 1px 1px #946326;
-  header a {
-    color: #222;
-  }
-  li#xbox {
-    background: none;
-  }
-  .details {
-  color: #946326;
-  text-shadow: 1px 1px 1px #FFBA5A;
-  }
-  tr {
-  background: rgba(0,0,0,0.2);
-  &:hover {
-    .icon { opacity: 1; }
-    a { color: #FFF;}
-    }
-  }
-  tr:nth-child(even) {
-    background: rgba(0,0,0,0.3);
-  }
-  td {
-  border-bottom: 1px solid #BB8942;
-  }
-
-}
 
 
-li#ios {
-  background: #222 url(http://subtlepatterns.com/patterns/dvsup.png);
-  a { color: #FFF;}
-}
-li#mac {
-  background: #5495E6;
-  // @include radial-gradient(50% 50%, circle cover, #8BB4ED, #4F8CD8);
-  a { color: #516A8B;}
-  text-shadow: 1px 1px 1px #AFD6FF;
-}
-li#android {
-  background: #99C400 image-url('androidbg.png');
-  a { color: #6F8D00; text-shadow: 1px 1px 1px #E2FF6A;}
-}
-li#xbox {
-  background: #E99C3D;
-  // @include linear-gradient(#EBB70F, #E99C3D, #CE5712);
-  a { color: #A66912; text-shadow: 1px 1px 1px #FFE063;}
-}
 
 
 a {
@@ -177,4 +129,8 @@ a {
 
 th {
 	text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+  #container table { margin: 5px; width: 100%;}
 }
