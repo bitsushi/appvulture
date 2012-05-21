@@ -70,9 +70,18 @@ table,tr,td {
 //   display: block;
 // }
 
+body.ios #ios,
+body.xbox #xbox,
+body.mac #mac,
+body.android #android { opacity: 1 !important; }
+
 table#subdomains {
   // width: 100%;
+  td:hover {
+    opacity: 0.9;
+  }
   td {
+    opacity: .7;
       font-family: 'Helvetica Neue';
   height: 100px;
   width: 16.666666%;
@@ -119,7 +128,7 @@ ul#subdomains li {
     line-height: 170px;
     background-position: center 15px;
     background-repeat: no-repeat;
-    opacity: 1;
+
   }
 }
 #container {

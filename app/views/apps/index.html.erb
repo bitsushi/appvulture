@@ -7,7 +7,7 @@
 <ul class="apps">
 <% @apps.each do |app| %>
 
-<li class="app <%= 'watched' if app.is_watched.to_bool %>">
+<li class="app <%= 'watched' if app.is_watched.to_bool %>" id="<%= dom_id(app) %>" data-url="<%= url_for app %>">
   <div class="inner">
     <div class="icon" style="background-image: url(<%=app.icon%>);"></div>
     <div>
