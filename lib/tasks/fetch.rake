@@ -36,7 +36,7 @@ namespace :fetch do
 
 
   task :mac => :environment do
-    results = JSON.parse(open("http://itunes.apple.com/search?term=c&country=GB&media=software&entity=software&limit=100").read)
+    results = JSON.parse(open("http://itunes.apple.com/search?term=c&country=GB&media=software&entity=macSoftware&limit=100").read)
     Mac.delete_all
     results['results'].each do |r|
       if app = Mac.find_by_mid(r['trackId'].to_s)
@@ -64,6 +64,9 @@ namespace :fetch do
       end
     end
   end
+
+  # task :android
+  # https://play.google.com/store/apps/details?id=com.cellfish.livewallpaper.marvel_avengers
 
   task :existing => :environment do
     Ios.limit(10).map(&:check_for_updates)

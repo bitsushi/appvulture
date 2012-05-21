@@ -22,6 +22,13 @@ require 'spec_helper'
 
 describe App do
 
+  it "saves languages and/or territories"
+  it "saves released date"
+  it "saves updated date"
+  it "has binary apps/games toggle"
+  it "records number of reviews for popularity"
+
+
   let(:app) { FactoryGirl.create(:app, price: 10) }
 
   it { should validate_format_of(:icon).with('http://google.com/image.jpg')}

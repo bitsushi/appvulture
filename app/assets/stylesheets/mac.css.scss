@@ -6,13 +6,20 @@
 }
 
 body.mac {
+  .icon {
+    background-color: transparent;
+    border: none;
+    @include border-radius(none);
+    width: 60px;
+    height: 60px;
+  }
   background: #4169AA;
   color: #EEE;
   text-shadow: 1px 1px 1px #444;
     // a { color: #516A8B;}
 
   #mac { background: none; opacity: 1;
-    a { color: #F5F5F5;}}
+    a { color: #F5F5F5; }}
   .details {
     color: #777;
     text-shadow: 1px 1px 1px #000;

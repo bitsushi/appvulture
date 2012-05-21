@@ -1,15 +1,15 @@
 
 #ios a {
-  background-color: #222;
+  background-color: #191919;
   background-image: image-url('ios_devices.png');
   color: #EEE;
   // @include linear-gradient(#EBB70F, #E99C3D, #CE5712);
   color: #AAA;
-  text-shadow: 1px 1px 1px #000;
+  text-shadow: -1px -1px 1px #000;
 }
 
 body.ios {
-  background: #222 url(http://subtlepatterns.com/patterns/dvsup.png);
+  background: #191919;// url(http://subtlepatterns.com/patterns/dvsup.png);
   color: #EEE;
   text-shadow: 1px 1px 1px #444;
   #ios {
@@ -23,5 +23,4 @@ body.ios {
 
   ul.items li.item { background-color: rgba(255,255,255,0.4) }
 
-  td { border-bottom: 1px solid #111; }
 }

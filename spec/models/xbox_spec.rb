@@ -22,6 +22,8 @@ require 'spec_helper'
 
 describe Xbox do
 
+  it "stores if there is a demo"
+
   it "should scan site", :vcr do
     Xbox.count.should eq(0)
     Xbox.scan_site

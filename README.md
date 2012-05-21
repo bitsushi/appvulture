@@ -1,5 +1,9 @@
 # Todo
 
+games for windows
+xbox live points cost (amazon)
+territories
+
 ## Browse products
 
 #### Your watches

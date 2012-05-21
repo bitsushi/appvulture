@@ -19,12 +19,16 @@ body {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   margin: 0;
   padding: 0;
-  font-family: 'Lucida Grande';
+  //"proxima-nova-soft",
+  //"ff-meta-web-pro",
+  //"adelle"
+  font-family: "proxima-nova-soft", 'Lucida Grande';
 }
 header {
   @include linear-gradient(top, #EEE, #FFF);
   // background: #DDD;//url('http://subtlepatterns.com/patterns/blizzard.png');
-  a { font-style: Helvetica; letter-spacing: 90%;  color: #222; }
+  //font-style: Helvetica;
+  a { letter-spacing: 90%;  color: #222; }
 }
 table {
   width: 100%;
@@ -73,7 +77,10 @@ table,tr,td {
 body.ios #ios,
 body.xbox #xbox,
 body.mac #mac,
-body.android #android { opacity: 1 !important; }
+body.android #android {
+  opacity: 1 !important;
+  a { text-shadow: -1px -1px 1px rgba(0,0,0,0.3) }
+}
 
 table#subdomains {
   // width: 100%;
@@ -82,7 +89,7 @@ table#subdomains {
   }
   td {
     opacity: .7;
-      font-family: 'Helvetica Neue';
+      // font-family: 'Helvetica Neue';
   height: 100px;
   width: 16.666666%;
   // float: left;
@@ -151,7 +158,7 @@ li.app {
     .merchant_icon { color: #444;}
   }
   h3 {
-    font-weight: bold;
+    font-weight: normal;
     font-size: 14px;
     text-align: center;
     margin: 0;
@@ -227,4 +234,8 @@ th {
 
 @media screen and (max-width: 480px) {
   #container { padding: 5px 0; }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
 }
