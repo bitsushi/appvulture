@@ -2,6 +2,8 @@
 
 <div id="current_price"><%= price @app.price %></div>
 
+<div class="icon" style="background-image: url(<%=@app.icon%>);"></div>
+
 <h3>Changes</h3>
 <div id="changes">
   <% if @app.changes.empty? %>
@@ -14,12 +16,12 @@
     </ul>
   <% end %>
 </div>
-<%= link_to "Get App", @app.url %>
+<%= link_to "Get App", @app.url, class: 'get_app' %>
 
 <% if @lens %>
   <%= link_to "stop watching", lens_path(@lens.id, return_to: app_path(@app)), method: 'delete' %>
 
   you are watching this app
 <% else %>
-  <%= link_to "watch this app", new_lens_path(app_id: @app.id) %>
+  <%= link_to "Watch this app", new_lens_path(app_id: @app.id), class: 'watch_app' %>
 <% end %>

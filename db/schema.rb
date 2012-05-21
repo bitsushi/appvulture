@@ -11,20 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120518111434) do
+ActiveRecord::Schema.define(:version => 20120519145959) do
+
+  create_table "androids", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "apps", :force => true do |t|
     t.string   "name",          :limit => 100
     t.string   "mid",           :limit => 40
     t.decimal  "price",                        :precision => 6, :scale => 2, :default => 0.0
-    t.string   "currency",      :limit => 3,                                 :default => "GBP"
+    t.string   "currency",      :limit => 3
     t.decimal  "high",                         :precision => 6, :scale => 2, :default => 0.0
     t.decimal  "low",                          :precision => 6, :scale => 2, :default => 0.0
     t.string   "icon"
     t.string   "type",          :limit => 7
     t.integer  "watcher_count",                                              :default => 0
-    t.datetime "created_at",                                                                    :null => false
-    t.datetime "updated_at",                                                                    :null => false
+    t.decimal  "rating",                       :precision => 4, :scale => 2, :default => 0.0
+    t.datetime "checked_at"
+    t.datetime "created_at",                                                                  :null => false
+    t.datetime "updated_at",                                                                  :null => false
   end
 
   add_index "apps", ["id", "type"], :name => "index_apps_on_id_and_type"

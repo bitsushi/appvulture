@@ -68,7 +68,7 @@ describe "Apps" do
       user = FactoryGirl.create(:user)
       login! user
       visit app_path(app)
-      click_link 'watch this app'
+      click_link 'Watch this app'
       current_path.should eq( new_lens_path )
     end
 

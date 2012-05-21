@@ -30,8 +30,12 @@ body.xbox {
   tr:nth-child(even) {
     background: rgba(0,0,0,0.3);
   }
-  td {
-  border-bottom: 1px solid #BB8942;
+
+  .icon {
+    width: 85px;
+    height: 120px;
+    @include border-radius(0);
+    border: none;
   }
 
 }

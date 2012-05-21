@@ -30,7 +30,10 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
   config.infer_base_class_for_anonymous_controllers = false
   config.include(MailerMacros)
-  config.before(:each) { reset_email }
+  config.before(:each) do
+    # Timecop.return
+    reset_email
+  end
 
   # config.before(:suite) do
   #   DatabaseCleaner.strategy = :transaction

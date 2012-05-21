@@ -5,7 +5,7 @@
 #  id            :integer         not null, primary key
 #  watcher_id    :integer
 #  app_id        :integer
-#  rule          :integer(1)      default(0)
+#  rule          :integer(2)      default(0)
 #  initial_price :decimal(6, 2)   default(0.0)
 #  desired_price :decimal(6, 2)   default(0.0)
 #  created_at    :datetime        not null

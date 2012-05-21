@@ -26,6 +26,8 @@ gem 'state_machine'
 gem 'vcr'
 gem 'fakeweb'
 gem 'bourbon'
+gem 'timecop'
+gem 'nokogiri'
 
 group :test, :development do
   gem 'rspec-rails'

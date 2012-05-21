@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   private
 
   def type
+    'ios'
   end
   helper_method :type
 

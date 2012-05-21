@@ -8,16 +8,13 @@
 <tbody>
 <% @apps.each do |app| %>
 <tr class="<%= 'watched' if app.is_watched.to_bool %>">
-<!--   <td class="merchant_icon"></td> -->
   <td><div class="icon" style="background-image: url(<%=app.icon%>);"></div></td>
   <td>
-    <%#= price app.price %><br/>
     <%= app.low == app.price ? ' ' : price(app.low) %><br/>
     <%= app.high == app.price ? ' ' : price(app.high) %></td>
   <td><%= link_to app, app %><br/>
-    <span class="details">★★★ Games</span>
+    <span class="details"><%= "★" * app.rating %> Games</span>
   </td>
-  <td>✓</td>
   <td></td>
 <!--   <td>
     <%= app.watcher_count %>

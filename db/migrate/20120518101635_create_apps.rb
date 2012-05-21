@@ -4,14 +4,14 @@ class CreateApps < ActiveRecord::Migration
       t.string :name, limit: 100
       t.string :mid, limit: 40
       t.money :price
-      t.string :currency, limit: 3, default: 'GBP'
+      t.string :currency, limit: 3, allow_null: false
       t.money :high
       t.money :low
       t.string :icon
-      # t.money :avg
       t.string :type, limit: 7, allow_null: false
       t.integer :watcher_count, default: 0
-      # t.datetime :checked_at, allow_null: false
+      t.money :rating, precision: 4
+      t.datetime :checked_at, allow_null: false
       t.timestamps
     end
 

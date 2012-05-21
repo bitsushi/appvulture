@@ -1,6 +1,3 @@
 class IosesController < AppsController
-  private
-  def type
-    'ios'
-  end
+  def type;'ios' end
 end
