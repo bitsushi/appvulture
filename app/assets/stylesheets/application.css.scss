@@ -27,6 +27,24 @@ table {
   *border-collapse: collapse; /* IE7 and lower */
   border-spacing: 0;
 }
+ul.apps {
+  clear: both;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+li.app {
+  float: left;
+  background: white;
+  margin: 5px;
+  width: 150px;
+  list-style: none;
+  padding: 0;
+    div.inner {
+    padding: 5px;
+  }
+}
+
 table,tr,td {
   padding: 0;
   margin: 0;
@@ -82,17 +100,24 @@ ul#subdomains li {
 td {
   padding: 4px;
 }
-tr {
+li.app {
+  @include border-radius(8px);
   background: rgba(0,0,0,0.2);
   &:hover {
     .icon { opacity: 1; }
     a { color: #FFF;}
     .merchant_icon { color: #444;}
   }
+  h3 {
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+  }
 }
-tr:nth-child(even) {
-  background: rgba(255,255,255,0.1);
-}
+// li.app:nth-child(even) {
+//   background: rgba(255,255,255,0.1);
+// }
 
 
 
@@ -131,6 +156,7 @@ input {
 }
 
 .icon {
+  margin: 0 auto;
   // opacity: 0.8;
   width: 56px;
   height: 56px;
@@ -154,10 +180,9 @@ th {
 }
 
 @media screen and (min-width: 1000px) {
-  #container { width: 950px; margin: 0 auto; }
+  #container { width: 960px; margin: 0 auto; }
 }
 
 @media screen and (max-width: 480px) {
   #container { padding: 5px 0; }
-  table { border: none; }
 }

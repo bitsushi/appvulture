@@ -49,10 +49,6 @@ class App < ActiveRecord::Base
     "#{id} #{name}".parameterize
   end
 
-  def url
-    "http://itunes.apple.com/gb/app/id#{mid}"
-  end
-
   def self.text_search(query)
     if query.present?
       where('name ILIKE :q', q: "%#{query}%")

@@ -4,29 +4,32 @@
 
 <form></form>
 
-<table>
-<tbody>
+<ul class="apps">
 <% @apps.each do |app| %>
-<tr class="<%= 'watched' if app.is_watched.to_bool %>">
-  <td><div class="icon" style="background-image: url(<%=app.icon%>);"></div></td>
-  <td>
-    <%= app.low == app.price ? ' ' : price(app.low) %><br/>
-    <%= app.high == app.price ? ' ' : price(app.high) %></td>
-  <td><%= link_to app, app %><br/>
-    <span class="details"><%= "★" * app.rating %> Games</span>
-  </td>
-  <td></td>
-<!--   <td>
-    <%= app.watcher_count %>
-    <% if app.is_watched.to_bool %>
-	watching
-	<% else %>
-    <%#= link_to "watch", new_lens_path(app_id: app.id) %>
-    <% end %>
-  </td> -->
-</tr>
+
+<li class="app <%= 'watched' if app.is_watched.to_bool %>">
+  <div class="inner">
+    <div class="icon" style="background-image: url(<%=app.icon%>);"></div>
+    <div>
+      <%= app.low == app.price ? ' ' : price(app.low) %>
+      <%= app.high == app.price ? ' ' : price(app.high) %>
+    </div>
+    <div>
+      <h3><%= link_to app, app %></h3>
+      <span class="details"><%= "★" * app.rating %> Games</span>
+    </div>
+    <div></div>
+  <!--   <div>
+      <%= app.watcher_count %>
+      <% if app.is_watched.to_bool %>
+  	watching
+  	<% else %>
+      <%#= link_to "watch", new_lens_path(app_id: app.id) %>
+      <% end %>
+    </div> -->
+  </div>
+</li>
 <% end %>
-</tbody>
-</table>
+</ul>
 
 <%= paginate @apps %>

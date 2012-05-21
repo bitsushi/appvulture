@@ -26,10 +26,9 @@ class Xbox < App
 
   def self.uber_find_by_mid mid
     unless app = App.limit(1).find_by_mid(mid)
-      url = "http://marketplace.xbox.com/en-US/Product/#{mid}"
-      doc = Nokogiri::HTML(open(url))
       app = Xbox.new
       app.mid = mid
+      doc = Nokogiri::HTML(open(app.url))
       app.currency = 'MSP'
       app.checked_at = Time.zone.now
       app.name = doc.css('h1').first.text
@@ -45,5 +44,9 @@ class Xbox < App
     end
     app.save!
     return app
+  end
+
+  def url
+    "http://marketplace.xbox.com/en-US/Product/#{self.mid}"
   end
 end

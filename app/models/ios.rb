@@ -19,4 +19,9 @@
 #
 
 class Ios < App
+
+  def url
+    "http://itunes.apple.com/gb/app/id#{mid}"
+  end
+
 end
