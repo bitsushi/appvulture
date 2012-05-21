@@ -24,6 +24,11 @@ class Xbox < App
   require 'open-uri'
   # attr_accessible :title, :body
 
+  def pretty_price
+    price.to_i
+    super
+  end
+
   def self.uber_find_by_mid mid
     unless app = App.limit(1).find_by_mid(mid)
       app = Xbox.new
@@ -44,6 +49,16 @@ class Xbox < App
     end
     app.save!
     return app
+  end
+
+  def self.scan_site
+    doc = Nokogiri::HTML(open(
+      "http://marketplace.xbox.com/en-US/Games/XboxArcadeGames"))
+
+    doc.css('ol.ProductResults.GameTiles li').each do |game|
+      mid = game.css('a').first.attributes['href'].value.split('/').last
+      Xbox.uber_find_by_mid(mid)
+    end
   end
 
   def url

@@ -1,4 +1,4 @@
-li#xbox a {
+#xbox a {
   background: #E99C3D image-url('xbox.png');
   // @include linear-gradient(#EBB70F, #E99C3D, #CE5712);
   color: #A66912; text-shadow: 1px 1px 1px #FFE063;
@@ -11,7 +11,7 @@ body.xbox {
   header a {
     color: #222;
   }
-  li#xbox {
+  #xbox {
     background: none;
     .logo { opacity: 1;}
     a { color: #F5F5F5;}

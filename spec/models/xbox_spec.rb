@@ -22,6 +22,12 @@ require 'spec_helper'
 
 describe Xbox do
 
+  it "should scan site", :vcr do
+    Xbox.count.should eq(0)
+    Xbox.scan_site
+    Xbox.count.should eq(30)
+  end
+
   it "should update by MID for existing game", :vcr, record: :new_episodes do
     Timecop.freeze(Time.now) do
       mid = '66acd000-77fe-1000-9115-d802584108b7'

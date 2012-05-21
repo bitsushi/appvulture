@@ -1,4 +1,4 @@
-li#android a {
+#android a {
   background: #99C400 image-url('android.png');
   // @include linear-gradient(#EBB70F, #E99C3D, #CE5712);
   color: #6F8D00;
@@ -10,7 +10,7 @@ body.android {
   background: #99C400 image-url('androidbg.png') fixed;
   color: #EEE;
   text-shadow: 1px 1px 1px #444;
-  li#android {
+  #android {
     background: none;
     .logo { opacity: 1;}
     a { color: #F5F5F5; background-color: transparent; text-shadow: 1px 1px 1px #7C9E00;}

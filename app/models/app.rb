@@ -29,6 +29,18 @@ class App < ActiveRecord::Base
   require 'json'
   require 'open-uri'
 
+  def pretty_price
+    if price == 0
+      'FREE'
+    else
+      price
+    end
+  end
+
+  def url
+    mid
+  end
+
   attr_accessible :currency, :mid, :name, :price, :icon#, :checked_at
   validates_presence_of :name, :mid, :price, :currency
   validates_numericality_of :price, :low, :high#, :avg

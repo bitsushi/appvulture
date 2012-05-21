@@ -30,12 +30,24 @@
   <% end %>
 </header>
 
-  <ul id="subdomains">
+<!--   <ul id="subdomains">
     <li id="ios"><%= link_to 'iOS', ioses_url %></li>
     <li id="mac"><%= link_to 'Mac', macs_url %></li>
     <li id="xbox"><%= link_to 'Xbox', xboxes_url %></li>
     <li id="android"><%= link_to 'Android', androids_url %></li>
-  </ul>
+    <li id="windows_phone"><%= link_to 'Android', '' %></li>
+  </ul> -->
+
+  <table id="subdomains"><tr>
+    <td id="ios"><%= link_to 'iOS', ioses_url %></td>
+    <td id="mac"><%= link_to 'Mac', macs_url %></td>
+    <td id="xbox"><%= link_to 'Xbox Live', xboxes_url %></td>
+    <td id="android"><%= link_to 'Android', androids_url %></td>
+    <td id="windows_phone"><%= link_to 'Windows Phone', '' %></td>
+    <td id="blackberry"><%= link_to 'Blackberry', '' %></td>
+
+  </tr></table>
+
   <div id="container">
 
   <% flash.each do |name, msg| %>

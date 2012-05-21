@@ -1,4 +1,4 @@
-li#mac a {
+#mac a {
   background: #4169AA image-url('mac.png');
   // @include radial-gradient(50% 50%, circle cover, #8BB4ED, #4F8CD8);
   text-shadow: 1px 1px 1px #8DC3FF;
@@ -11,7 +11,7 @@ body.mac {
   text-shadow: 1px 1px 1px #444;
     // a { color: #516A8B;}
 
-  li#mac { background: none;
+  #mac { background: none;
     .logo { opacity: 1;}
     a { color: #F5F5F5;}}
   .details {
@@ -19,11 +19,4 @@ body.mac {
     text-shadow: 1px 1px 1px #000;
   }
   // td { border-bottom: 1px solid #111; }
-
-  table {
-    border-top: 1px solid rgba(0,0,0,0.5);
-    border-left: 1px solid rgba(0,0,0,0.5);
-    border-right: 1px solid rgba(255,255,255,0.2);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-  }
 }

@@ -20,4 +20,8 @@
 
 class Mac < App
   # attr_accessible :title, :body
+
+  def url
+    "http://itunes.apple.com/gb/app/id#{mid}"
+  end
 end
