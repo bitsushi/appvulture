@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
-<body class="<%= request.subdomain %>">
+<body class="<%= type %>">
 <header>
   <%= link_to "AppVulture", root_path, id: "logo" %>
   <div id="user_nav">
@@ -31,10 +31,10 @@
 </header>
 
   <ul id="subdomains">
-    <li id="ios"><%= link_to 'iOS', ioses_url(subdomain: 'ios') %></li>
-    <li id="mac"><%= link_to 'Mac', macs_url(subdomain: 'mac') %></li>
-    <li id="xbox"><%= link_to 'Xbox', xboxes_url(subdomain: 'xbox') %></li>
-    <li id="android"><%= link_to 'Android', androids_url(subdomain: 'android') %></li>
+    <li id="ios"><%= link_to 'iOS', ioses_url %></li>
+    <li id="mac"><%= link_to 'Mac', macs_url %></li>
+    <li id="xbox"><%= link_to 'Xbox', xboxes_url %></li>
+    <li id="android"><%= link_to 'Android', androids_url %></li>
   </ul>
   <div id="container"
 

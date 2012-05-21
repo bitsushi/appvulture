@@ -1,5 +1,5 @@
 class MacsController < AppsController
-
+  def type; 'mac' end
   # def index
   #   if current_user
   #     @apps = Mac.text_search(params[:query])

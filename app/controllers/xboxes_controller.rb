@@ -1,5 +1,5 @@
 class XboxesController < AppsController
-
+  def type; 'xbox' end
   # def index
   #   if current_user
   #     @apps = Xbox.text_search(params[:query])

@@ -9,10 +9,10 @@ Appvulture::Application.routes.draw do
   resources :sessions
   resources :password_resets
   resources :apps
-  resources :ioses, path: '', constraints: {subdomain: "ios"}
-  resources :macs, path: '', constraints: {subdomain: "mac"}
-  resources :xboxes, path: '', constraints: {subdomain: "xbox"}
-  resources :androids, path: '', constraints: {subdomain: "android"}
+  resources :ioses, path: 'ios-apps'#, path: '', constraints: {subdomain: "ios"}
+  resources :macs, path: 'mac-apps'#, path: '', constraints: {subdomain: "mac"}
+  resources :xboxes, path: 'xbox-live-games'#, path: '', constraints: {subdomain: "xbox"}
+  resources :androids, path: 'android-apps'#, path: '', constraints: {subdomain: "android"}
 
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'

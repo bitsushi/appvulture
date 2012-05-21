@@ -1,5 +1,5 @@
 class AndroidsController < AppsController
-
+  def type; 'android' end
   # def index
   #   if current_user
   #     @apps = Android.text_search(params[:query])
