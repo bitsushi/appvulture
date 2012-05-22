@@ -12,11 +12,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body class="<%= type %>">
+
 <header>
+  <div class="container">
   <%= link_to "AppVulture", root_path, id: "logo" %>
   <div id="user_nav">
     <% if current_user %>
-      <%#= link_to "Lenses", lenses_path %>
       Logged in as <%= current_user.email %>
       <%= link_to "Logout", logout_url(subdomain: false) %>
     <% else %>
@@ -24,29 +25,16 @@
       <%= link_to "Login", login_url(subdomain: false) %>
     <% end %>
   </div>
+</div>
 
-  <% if current_user %>
-    <%= link_to "Lenses", lenses_path %>
-  <% end %>
-    <%= link_to "Apps", apps_path %>
-    <%= form_tag request.fullpath, method: 'GET' do %>
+<% if current_user %>
+  <%= link_to "Lenses", lenses_path %>
+<% end %>
+  <%= link_to "Apps", apps_path %>
+  <%= form_tag request.fullpath, method: 'GET' do %>
+  <%= text_field_tag :query, params[:query], type: 'search', placeholder: 'Search' %>
+<% end %>
 
-    <%= text_field_tag :query, params[:query], type: 'search', placeholder: 'Search' %>
-
-    <div>
-    sort by:
-    <%= link_to "Watchers", '#' %>
-    <%= link_to "A-Z", '#' %>
-    <%= link_to "Rating", '#' %>
-    <%= link_to "Price", '#' %>
-    </div>
-    <div>
-    filter by:
-    <%= link_to "Genre", '#' %>
-    <%= link_to "Age Rating", '#' %>
-    <%= link_to "Free", '#' %>
-    </div>
-  <% end %>
 </header>
 
 <!--   <ul id="subdomains">
@@ -67,7 +55,7 @@
 
   </tr></table>
 
-  <div id="container">
+  <div class="container">
 
   <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, class: "flash #{name}" %>

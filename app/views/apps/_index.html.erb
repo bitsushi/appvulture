@@ -1,7 +1,3 @@
-<%# title "Apps", false %>
-
-
-
 <form></form>
 
 <ul class="apps">
@@ -15,7 +11,7 @@
       <%= app.high == app.price ? ' ' : price(app.high) %>
     </div>
     <div>
-      <h3><%= link_to app, app %></h3>
+      <h3><%= link_to(truncate(app.name, length: 12), app) %></h3>
       <span class="details"><%= "★" * app.rating %> Games</span>
     </div>
     <div></div>

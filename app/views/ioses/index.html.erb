@@ -1,9 +1,25 @@
-<h4>Filter</h4>
+<%# title "iOS Apps" %>
 
-Designed for:
-<ul>
-  <li>iPhone &amp; iPod</li>
-  <li>Universal</li>
-  <li>iPad Only</li>
-</ul>
+<%= form_tag request.path, method: 'get', id: 'filters', remote: true do %>
+<!-- Designed for: -->
+  <ul>
+    <li>
+      <%= check_box_tag 'filters[]','iphone',
+      (params['filters'].include?('iphone') if params['filters']) %>
+      <%= label_tag 'filters_iphone', 'iPhone & iPod' %>
+    </li>
+    <li>
+      <%= check_box_tag 'filters[]', 'universal',
+      (params['filters'].include?('universal') if params['filters']) %>
+      <%= label_tag 'filters_universal', 'Universal' %>
+    </li>
+    <li>
+      <%= check_box_tag 'filters[]', 'ipad',
+      (params['filters'].include?('ipad') if params['filters']) %>
+      <%= label_tag 'filters_ipad', 'iPad' %>
+    </li>
+  </ul>
+  <%= submit_tag 'Filter' %>
+<% end %>
+
 <%= render 'apps/index' %>

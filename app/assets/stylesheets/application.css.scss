@@ -83,6 +83,7 @@ body.android #android {
 }
 
 table#subdomains {
+  background: black;
   // width: 100%;
   td:hover {
     opacity: 0.9;
@@ -90,21 +91,23 @@ table#subdomains {
   td {
     opacity: .7;
       // font-family: 'Helvetica Neue';
-  height: 100px;
+  height: 74px;
   width: 16.666666%;
   // float: left;
   text-align: center;
-  .logo { font-size: 30px; margin: 10px 0; opacity: 0.7;}
   font-weight: bold;
   a {
     width: 100%;
     height: 100%;
     display: block;
     vertical-align: bottom;
-    padding: 75px 0 10px;
+    padding: 55px 0 5px;
+    line-height: 85%;
     // line-height: 170px;
-    background-position: center 15px;
+    background-position: center 8px;
     background-repeat: no-repeat;
+    background-size: auto 40px;
+    vertical-align: text-bottom;
     opacity: 1;
   }
   }
@@ -135,10 +138,12 @@ ul#subdomains li {
     line-height: 170px;
     background-position: center 15px;
     background-repeat: no-repeat;
-
   }
 }
-#container {
+header .container {
+  padding: 0;
+}
+.container {
   background: none;
   padding: 20px;
   table { width: inherit; display: block; margin: 0px auto 20px; overflow: hidden;}
@@ -190,6 +195,7 @@ tr.watched {
 #logo {
 	font-size: 2em;
   font-weight: bold;
+  text-shadow: 1px 1px 1px #FFF;
 }
 header {
   text-shadow: none;
@@ -229,13 +235,51 @@ th {
 }
 
 @media screen and (min-width: 1000px) {
-  #container { width: 960px; margin: 0 auto; }
+  .container { width: 960px; margin: 0 auto; }
 }
 
 @media screen and (max-width: 480px) {
-  #container { padding: 5px 0; }
+  .container { padding: 5px 0; }
 }
 
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
+}
+
+header {
+  ul, li {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    float: left;
+  }
+  li {
+    margin-right: 5px;
+    background: #eee;
+    padding: 2px 4px;
+    font-weight: bold;
+    font-size: 14px;
+    @include border-radius(2px);
+  }
+}
+
+form#filters {
+  overflow: hidden;
+  margin-bottom: 10px;
+  input { display: none; }
+  label {
+    display: block;
+    padding: 5px 7px 5px 20px;
+    background-color: #333;
+    @include border-radius(4px);
+    &.active {
+      background-color: #46A245;
+    }
+    // border-bottom: 1px solid #555;
+    // border-right: 1px solid #555;
+    // border-top: 1px solid #000;
+    // border-left: 1px solid #000;
+  }
+  li { list-style: none; float: right; margin-right: 10px;}
+  ul { margin: 0; padding: 0; display: inline; }
 }
